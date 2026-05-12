@@ -24,7 +24,7 @@ def prepare():
                 if row[5] != "Null":
                     global_data_reference[str(row[2])] = str(row[5])
 
-    print(">>共统计到路径映射：" + str(len(global_data_reference)))
+    print(">> Path mappings found / >>共统计到路径映射：" + str(len(global_data_reference)))
     print(global_data_reference)
 
 def read():

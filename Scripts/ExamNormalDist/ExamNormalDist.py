@@ -22,6 +22,6 @@ for file in csv_files:
             datas.append(data)
     statistic, p_value = stats.shapiro(datas)
     if p_value > 0.05:
-        print(os.path.basename(file) + " 中的数据符合正态分布")
+        print(os.path.basename(file) + " conforms to normal distribution / 中的数据符合正态分布")
     if p_value < 0.05:
-        print(os.path.basename(file) + " 中的数据不符合正态分布")
+        print(os.path.basename(file) + " does not conform to normal distribution / 中的数据不符合正态分布")

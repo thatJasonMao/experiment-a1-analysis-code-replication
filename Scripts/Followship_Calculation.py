@@ -144,9 +144,9 @@ def clear_path(folder_path):
             if os.path.isfile(file_path):
                 os.remove(file_path)
     except FileNotFoundError:
-        print(f"指定的文件夹 {folder_path} 不存在。")
+        print(f"Specified folder does not exist / 指定的文件夹 {folder_path} 不存在。")
     except PermissionError:
-        print(f"没有权限删除文件夹 {folder_path} 中的文件。")
+        print(f"No permission to delete files in folder / 没有权限删除文件夹 {folder_path} 中的文件。")
 
 if __name__ == "__main__":
     prepare()

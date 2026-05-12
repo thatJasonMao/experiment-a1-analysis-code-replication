@@ -66,7 +66,7 @@ def draw_single_subject_single_level():
 
         plt.scatter(x_coords, y_coords, color='blue', label='GazePoint')
 
-        plt.title('领导者被注视时的相对位置 组别分类：' + single_subject_and_level_ref)
+        plt.title("Relative position when leader is gazed at, group: " + single_subject_and_level_ref)
         plt.xlabel('X')
         plt.ylabel('Y')
 

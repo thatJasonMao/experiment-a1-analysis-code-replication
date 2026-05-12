@@ -26,7 +26,7 @@ def analyze():
     for file in target_files:
         get_avg(file)
         progress_bar.update(1)
-        progress_bar.set_description(f"计算平面加速度均值")
+        progress_bar.set_description(f"Computing mean planar acceleration / 计算平面加速度均值")
 
 def get_avg(path):
     global avg_acc_info

@@ -35,10 +35,10 @@ def find_file():
     global_file_path = global_file_path + "问卷数据" + os.sep + "仿真不适问卷" + os.sep
     global_file_path = global_file_path + "问卷.xlsx"
     if os.path.exists(global_file_path):
-        print(">>已找到目标文件")
+        print(">> Target file found / 已找到目标文件")
         print(global_file_path)
     else:
-        print(">>未找到目标文件")
+        print(">> Target file NOT found / 未找到目标文件")
 
 def read():
     global global_subject_feishu_names
@@ -59,17 +59,20 @@ def read():
 
     workbook.close()
 
-    print(">>飞书用户名称总计：" + str(len(global_subject_feishu_names)))
-    print(">>昵称总计：" + str(len(global_subject_nick_names)))
-    print(">>量表数据总计：" + str(len(global_subject_scale_data)))
-    print("\n" + "飞书用户名")
+    print(">> Feishu users total / 飞书用户名称总计：" + str(len(global_subject_feishu_names)))
+    print(">> Nickname total / 昵称总计：" + str(len(global_subject_nick_names)))
+    print(">> Scale data total / 量表数据总计：" + str(len(global_subject_scale_data)))
+    print("
+" + "Feishu user name / 飞书用户名")
     print(global_subject_feishu_names)
-    print("\n" + "昵称")
+    print("
+" + "Nickname / 昵称")
     print(global_subject_nick_names)
-    print("\n" + "量表数据")
+    print("
+" + "Scale data / 量表数据")
     print(global_subject_scale_data)
 
-    print(">>完成读取量表数据")
+    print(">> Scale data reading complete / 完成读取量表数据")
 
 def get_scale(str_value):
     if str_value == "无":
@@ -95,9 +98,9 @@ def calculate():
         while index_scale_datas_str < len(ssq_scale_datas_str):
             ssq_scale_datas_int.append(get_scale(ssq_scale_datas_str[index_scale_datas_str]))
             index_scale_datas_str = index_scale_datas_str + 1
-        print(">>SSQ全量数据")
+        print(">> SSQ full data / >>SSQ全量数据")
         print(ssq_scale_datas_str)
-        print(">>SSQ转换后尺度")
+        print(">> SSQ converted scale / >>SSQ转换后尺度")
         print(ssq_scale_datas_int)
         index_scale = index_scale + 1
 
@@ -108,15 +111,15 @@ def calculate():
 
         d_scale = ssq_scale_datas_int[11] + ssq_scale_datas_int[12] + ssq_scale_datas_int[13]
 
-        print(">>当前N尺度累加（恶心） " + str(n_scale) + " 当前O尺度累加（眼动障碍） " + str(o_scale) + " 当前D尺度累加（方向障碍） " + str(d_scale))
+        print(">> Current N scale sum (Nausea) / >>当前N尺度累加（恶心） " + str(n_scale) + " 当前O尺度累加（眼动障碍） " + str(o_scale) + " 当前D尺度累加（方向障碍） " + str(d_scale))
         ssq_value = (n_scale + o_scale + d_scale) * sum_const
-        print(">>当前SSQ总值：" + str(ssq_value))
+        print(">> Current SSQ total / >>当前SSQ总值：" + str(ssq_value))
         global_subject_ssq_value.append(ssq_value)
 
         n_value = n_scale * n_const
         o_value = o_scale * o_const
         d_value = d_scale * d_const
-        print(">>N值（恶心） " + str(n_value) + " O值（眼动障碍） " + str(o_value) + " D值（方向障碍） " + str(d_value))
+        print(">> N value (Nausea) / >>N值（恶心） " + str(n_value) + " O值（眼动障碍） " + str(o_value) + " D值（方向障碍） " + str(d_value))
         print("\n")
         global_subject_n_value.append(n_value)
         global_subject_o_value.append(o_value)
@@ -138,7 +141,7 @@ def output():
     timestamp = now.strftime("%Y-%m%d-%H-%M")
     global_output_path = global_output_path + "Results" + os.sep + "SSQ-Results-" + timestamp + ".xlsx"
     check_existing(global_output_path)
-    print("目标输出路径已确认：" + global_output_path)
+    print("Output path confirmed / 目标输出路径已确认：" + global_output_path)
 
     wb = Workbook()
     ws = wb.active
@@ -173,9 +176,9 @@ def output():
 def check_existing(path):
     if os.path.exists(path):
         os.remove(path)
-        print(">>重名文件存在 已移除")
+        print(">> Duplicate file found and removed / >>重名文件存在 已移除")
     else:
-        print(">>未发现重名文件")
+        print(">> No duplicate files found / >>未发现重名文件")
 
 if __name__ == "__main__":
     find_file()

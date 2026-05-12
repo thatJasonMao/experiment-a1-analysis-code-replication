@@ -32,7 +32,7 @@ def analyze():
     for file in target_files:
         get_distance(file)
         progress_bar.update(1)
-        progress_bar.set_description(f"计算疏散全程旅行时间")
+        progress_bar.set_description(f"Computing total evacuation travel time / 计算疏散全程旅行时间")
 
 def get_distance(path):
     global total_time_info

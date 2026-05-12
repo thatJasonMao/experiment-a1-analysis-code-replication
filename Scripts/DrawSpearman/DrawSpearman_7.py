@@ -29,7 +29,7 @@ def draw_group(group_name):
 
     correlation_matrix = combined_data.corr(method='spearman')
 
-    print('相关性矩阵：')
+    print("Correlation matrix / 相关性矩阵：")
     print(correlation_matrix)
 
     plt.rcParams['figure.dpi'] = 300

@@ -71,7 +71,7 @@ def build_subject_content(start_time, end_time, level):
     line_index = 0
     while line_index < len(full_file_contents):
         progress_bar.update(1)
-        progress_bar.set_description(f"提取受试者数据")
+        progress_bar.set_description(f"Extracting subject data / 提取受试者数据")
 
         line = full_file_contents[line_index]
         str_stamp = line[0]
@@ -108,7 +108,7 @@ def build_gaze_content(level):
     line_index = 0
     while line_index < len(full_file_contents):
         progress_bar.update(1)
-        progress_bar.set_description(f"提取眼动数据")
+        progress_bar.set_description(f"Extracting eye-tracking data / 提取眼动数据")
         line = full_file_contents[line_index]
         str_stamp = line[0]
         str_line_content = ','.join(line)

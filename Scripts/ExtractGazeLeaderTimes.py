@@ -25,7 +25,7 @@ def analyze():
     for file in target_files:
         get_gaze_on_leader(file)
         progress_bar.update(1)
-        progress_bar.set_description(f"提取注视次数")
+        progress_bar.set_description(f"Extracting gaze count / 提取注视次数")
 
 def get_gaze_on_leader(path):
     global infos

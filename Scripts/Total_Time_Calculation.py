@@ -63,7 +63,7 @@ def read_and_extract():
         build_list(subject_folder_path, 6)
 
         progress_bar.update(1)
-        progress_bar.set_description(f"处理并绘制受试者数据")
+        progress_bar.set_description(f"Processing and plotting subject data / 处理并绘制受试者数据")
 
         if will_pause_after_first_subject:
             quit()

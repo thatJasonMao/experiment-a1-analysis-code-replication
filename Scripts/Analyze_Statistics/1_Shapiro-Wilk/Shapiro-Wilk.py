@@ -19,16 +19,16 @@ for path in paths:
                         current_data.append(float(row[0]))
                     except (ValueError, IndexError) as e:
                         remark += f"数据格式错误行{reader.line_num}; "
-                        print(f"数据格式错误 @文件 {path} 行 {reader.line_num}: {e}")
+                        print(f"Data format error / 数据格式错误 @file {path} line {reader.line_num}: {e}")
 
     except FileNotFoundError:
-        print(f"文件 {path} 未找到，跳过处理")
+        print(f"File not found, skipping / 文件 {path} 未找到，跳过处理")
         with open('Results.csv', 'a', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerow([path, 'N/A', 'N/A', 'N/A', 0, '文件未找到'])
         continue
     except Exception as e:
-        print(f"处理 {path} 时发生错误: {e}")
+        print(f"Error processing file / 处理 {path} 时发生错误: {e}")
         remark = f"文件读取错误: {e}"
 
     sample_size = len(current_data)
@@ -43,7 +43,7 @@ for path in paths:
         stat, p_value = stats.shapiro(current_data)
         is_normal = p_value > 0.05
     except Exception as e:
-        print(f"文件 {path} 检验时发生错误: {e}")
+        print(f"Error during K-S test for file / 文件 {path} 检验时发生错误: {e}")
         with open('Results.csv', 'a', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerow([path, 'N/A', 'N/A', 'N/A', sample_size, f"{remark}检验错误"])

@@ -31,24 +31,24 @@ group_passenger = []
 group_robot = []
 
 standard_username = {
-    "jiazixi": "076ecaaa4a9bbeda",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "llr": "36033e6f9b0221c3",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "飞书用户5390VU": "aac3a096b47a836f",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "Liqipei": "4f795c94300704e6",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "飞书用户8147XF": "fb54c3d25307d7a6",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "hg": "17ca5520cf72a9d9",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "飞书用户4718AD": "393f36c7f4116ce5",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "ysx": "abde714d748dd79a",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "ciel": "24481c2316cbfbba",  # [隐私保护] 受试者姓名已替换为MD5哈希值
+    "jiazixi": "076ecaaa4a9bbeda",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "llr": "36033e6f9b0221c3",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "飞书用户5390VU": "aac3a096b47a836f",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "Liqipei": "4f795c94300704e6",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "飞书用户8147XF": "fb54c3d25307d7a6",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "hg": "17ca5520cf72a9d9",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "飞书用户4718AD": "393f36c7f4116ce5",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "ysx": "abde714d748dd79a",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "ciel": "24481c2316cbfbba",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
 
-    "yizhen": "14d20be1dea6b003",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "严": "21c544db2395eccd",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "飞书用户0762JB": "ae4d0c8de33fda7f",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "周": "811b1e38e7923d87",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "飞书用户3374BA": "4bf052903d694235",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "柯柯": "f3345e299a8b4209",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "哈哈哈": "7fc12372a40f034a",  # [隐私保护] 受试者姓名已替换为MD5哈希值
-    "蓝组qi": "321a57bc72c8be33",  # [隐私保护] 受试者姓名已替换为MD5哈希值
+    "yizhen": "14d20be1dea6b003",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "严": "21c544db2395eccd",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "飞书用户0762JB": "ae4d0c8de33fda7f",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "周": "811b1e38e7923d87",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "飞书用户3374BA": "4bf052903d694235",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "柯柯": "f3345e299a8b4209",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "哈哈哈": "7fc12372a40f034a",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
+    "蓝组qi": "321a57bc72c8be33",  # [Privacy] Participant name replaced with MD5 hash / [隐私保护] 受试者姓名已替换为MD5哈希值
 }
 
 def get_grand_grand_parent_folder():
@@ -76,9 +76,9 @@ def build_group_ref():
                     group_security.append(name)
                 if "Robot" in str(row[3]):
                     group_robot.append(name)
-    print("Passenger组总计：" + str(len(group_passenger)))
-    print("Security组总计：" + str(len(group_security)))
-    print("Robot组总计：" + str(len(group_robot)))
+    print("Passenger group total / Passenger组总计：" + str(len(group_passenger)))
+    print("Security group total / Security组总计：" + str(len(group_security)))
+    print("Robot group total / Robot组总计：" + str(len(group_robot)))
 
 def name_correction(name):
     if name in standard_username.keys():
@@ -215,7 +215,7 @@ def get_leader_type(subject_name):
         group_id = "Robot"
 
     if group_id == "Null":
-        print(f"Subject:{subject_name}  Is Missing Leader Type.")
+        print(f"Subject:{subject_name} missing leader type / 缺少领导类型")
     return group_id
 
 def build_data_chain():
@@ -229,37 +229,37 @@ def build_data_chain():
             if key in subject_gse_dict.keys():
                 gse = subject_gse_dict[key]
             else:
-                print(f"{key} Is Missing!")
+                print(f"{key} data is missing / {key} 数据缺失!")
 
             its = "Null"
             if key in subject_its_dict.keys():
                 its = subject_its_dict[key]
             else:
-                print(f"{key} Is Missing!")
+                print(f"{key} data is missing / {key} 数据缺失!")
 
             age = "Null"
             if key in age_dict.keys():
                 age = age_dict[key]
             else:
-                print(f"{key} Is Missing!")
+                print(f"{key} data is missing / {key} 数据缺失!")
 
             gender = "Null"
             if key in gender_dict.keys():
                 gender = gender_dict[key]
             else:
-                print(f"{key} Is Missing!")
+                print(f"{key} data is missing / {key} 数据缺失!")
 
             pref = "Null,Null,Null"
             if key in pref_dict.keys():
                 pref = pref_dict[key]
             else:
-                print(f"{key} Is Missing!")
+                print(f"{key} data is missing / {key} 数据缺失!")
 
             exp = "Null,Null,Null"
             if key in exp_dict.keys():
                 exp = exp_dict[key]
             else:
-                print(f"{key} Is Missing!")
+                print(f"{key} data is missing / {key} 数据缺失!")
 
             content = f"{gse},{its},{age},{gender},{pref},{exp}"
             counter = 0
@@ -284,7 +284,7 @@ def build_data_chain():
             if "Null" not in str(row) and "Error" not in str(row):
                 counter = counter + 1
                 writer.writerow(row)
-        print(f"共统计到DP1决策数据{counter - 1}组")
+        print(f"Total DP1 decision data records collected / 共统计到DP1决策数据{counter - 1}组")
 
 if __name__ == "__main__":
     build_group_ref()

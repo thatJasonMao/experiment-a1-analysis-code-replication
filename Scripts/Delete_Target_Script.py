@@ -18,11 +18,11 @@ def delete_target_files(folder_path, target_name):
                     file_path = os.path.join(root, file)
                     try:
                         os.remove(file_path)
-                        print(f"已删除文件: {file_path}")
+                        print(f"File deleted / 已删除文件: {file_path}")
                     except Exception as e:
-                        print(f"删除文件 {file_path} 时出错: {e}")
+                        print(f"Error deleting file / 删除文件 {file_path} 时出错: {e}")
     else:
-        print(f"路径 {folder_path} 不存在或不是一个有效的目录。")
+        print(f"Path does not exist or is not a valid directory / 路径 {folder_path} 不存在或不是一个有效的目录。")
 
 delete_target_files(target_path_1, target_script_name)
 delete_target_files(target_path_2, target_script_name)

@@ -26,7 +26,7 @@ def analyze():
     for file in target_files:
         get_gaze_distance(file)
         progress_bar.update(1)
-        progress_bar.set_description(f"计算疏散全程的注视点距离")
+        progress_bar.set_description(f"Computing full evacuation gaze point distance / 计算疏散全程的注视点距离")
 
 def distance_between_two_points(pt1, pt2):
     x1 = pt1[0]

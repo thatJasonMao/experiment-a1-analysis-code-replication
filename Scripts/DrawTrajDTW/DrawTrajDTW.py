@@ -31,7 +31,7 @@ def read_and_draw(level):
             level_name = level_name.replace(".csv", "")
             level_dtw = float(row[1])
             dtw_dict[level_name] = level_dtw
-    print("共检索到DTW数据量：" + str(len(dtw_dict.keys())))
+    print("DTW data records found / 共检索到DTW数据量：" + str(len(dtw_dict.keys())))
 
     list_security = []
     list_passenger = []
@@ -50,9 +50,9 @@ def read_and_draw(level):
             if subject_name in group_robot:
                 list_robot.append(subject_dtw)
 
-    print("Security数据量：" + str(len(list_security)))
-    print("Passenger数据量:" + str(len(list_passenger)))
-    print("Robot数据量：" + str(len(list_robot)))
+    print("Security data count / Security数据量：" + str(len(list_security)))
+    print("Passenger data count / Passenger数据量:" + str(len(list_passenger)))
+    print("Robot data count / Robot数据量：" + str(len(list_robot)))
 
     data = [list_security, list_passenger, list_robot]
     labels = ['Security', 'Passenger', 'Robot']
@@ -100,9 +100,9 @@ def build_group_ref():
                     group_security.append(name)
                 if "Robot" in str(row[3]):
                     group_robot.append(name)
-    print("Passenger组总计：" + str(len(group_passenger)))
-    print("Security组总计：" + str(len(group_security)))
-    print("Robot组总计：" + str(len(group_robot)))
+    print("Passenger group total / Passenger组总计：" + str(len(group_passenger)))
+    print("Security group total / Security组总计：" + str(len(group_security)))
+    print("Robot group total / Robot组总计：" + str(len(group_robot)))
 
 if __name__ == "__main__":
     build_group_ref()

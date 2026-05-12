@@ -26,7 +26,7 @@ def analyze():
     for file in target_files:
         get_distance(file)
         progress_bar.update(1)
-        progress_bar.set_description(f"计算疏散全程总体运动距离")
+        progress_bar.set_description(f"Computing total evacuation movement distance / 计算疏散全程总体运动距离")
 
 def get_distance(path):
     global move_distance_info

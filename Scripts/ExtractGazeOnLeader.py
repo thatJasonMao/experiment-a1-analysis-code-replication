@@ -23,7 +23,7 @@ def analyze():
     for file in target_files:
         get_gaze_on_leader(file)
         progress_bar.update(1)
-        progress_bar.set_description(f"提取受试者对领导者的注视")
+        progress_bar.set_description(f"Extracting subject gaze on leader / 提取受试者对领导者的注视")
 
 def get_gaze_on_leader(path):
     gaze_info_lines = []

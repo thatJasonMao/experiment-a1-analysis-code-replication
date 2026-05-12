@@ -94,9 +94,9 @@ def build_group_ref():
                     group_security.append(name)
                 if "Robot" in str(row[3]):
                     group_robot.append(name)
-    print("Passenger组总计：" + str(len(group_passenger)))
-    print("Security组总计：" + str(len(group_security)))
-    print("Robot组总计：" + str(len(group_robot)))
+    print("Passenger group total / Passenger组总计：" + str(len(group_passenger)))
+    print("Security group total / Security组总计：" + str(len(group_security)))
+    print("Robot group total / Robot组总计：" + str(len(group_robot)))
 
 def get_raw_data_path():
     target_file_name = get_grand_grand_parent_folder() + os.sep + "GroupData_Gaze_On_All"
@@ -139,9 +139,9 @@ def get_data(path):
                         frame_data = [sub_pos_x, sub_pos_y, sub_pos_z, sub_rot_y, leader_pos_x, leader_pos_y, leader_pos_z]
                         raw_infos.append(frame_data)
                     else:
-                        print(f"略过一处不合规数据 {path}")
+                        print(f"Skipping one invalid data entry / 略过一处不合规数据 {path}")
     except:
-        print("文件读取错误：" + path)
+        print("File read error / 文件读取错误：" + path)
     return raw_infos
 
 def build_data_ref():
@@ -218,7 +218,7 @@ def plot_topology(data, title, ax, vmin, vmax):
     center, boundary_points, sorted_intensity, total_intensity = calculate_heatmap_center_and_percentage_boundary(data, global_top_percentage)
 
     concentration_index = calculate_concentration_index(sorted_intensity, total_intensity, global_top_percentage)
-    print(f"{title} - 热力质心: ({center[0]:.2f}, {center[1]:.2f}), 前10%集中度指数: {concentration_index:.4f}")
+    print(f"{title} - heatmap centroid / 热力质心: ({center[0]:.2f}, {center[1]:.2f}), top 10% concentration index / 前10%集中度指数: {concentration_index:.4f}")
 
     elongation_index = calculate_elongation_index(boundary_points)
 

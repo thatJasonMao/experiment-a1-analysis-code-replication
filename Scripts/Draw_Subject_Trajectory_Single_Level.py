@@ -55,7 +55,7 @@ def read_and_draw():
         build_list(subject_folder_path, 6)
 
         progress_bar.update(1)
-        progress_bar.set_description(f"处理并绘制受试者数据")
+        progress_bar.set_description(f"Processing and plotting subject data / 处理并绘制受试者数据")
 
         current_script_path = os.path.abspath(__file__)
         current_folder = os.path.dirname(current_script_path)
@@ -157,9 +157,9 @@ def clear_path(folder_path):
             if os.path.isfile(file_path):
                 os.remove(file_path)
     except FileNotFoundError:
-        print(f"指定的文件夹 {folder_path} 不存在。")
+        print(f"Specified folder does not exist / 指定的文件夹 {folder_path} 不存在。")
     except PermissionError:
-        print(f"没有权限删除文件夹 {folder_path} 中的文件。")
+        print(f"No permission to delete files in folder / 没有权限删除文件夹 {folder_path} 中的文件。")
 
 def build_list(data_folder_path, level):
     global global_level_names

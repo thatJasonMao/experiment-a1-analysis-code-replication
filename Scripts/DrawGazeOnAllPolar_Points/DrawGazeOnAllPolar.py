@@ -42,9 +42,9 @@ def build_group_ref():
                     group_security.append(name)
                 if "Robot" in str(row[3]):
                     group_robot.append(name)
-    print("Passenger组总计：" + str(len(group_passenger)))
-    print("Security组总计：" + str(len(group_security)))
-    print("Robot组总计：" + str(len(group_robot)))
+    print("Passenger group total / Passenger组总计：" + str(len(group_passenger)))
+    print("Security group total / Security组总计：" + str(len(group_security)))
+    print("Robot group total / Robot组总计：" + str(len(group_robot)))
 
 def get_polar_data_path():
     target_file_name = get_grand_grand_parent_folder() + os.sep + "GroupData_Gaze_On_All"

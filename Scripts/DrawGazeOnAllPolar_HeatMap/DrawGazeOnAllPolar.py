@@ -46,9 +46,9 @@ def build_group_ref():
                     group_security.append(name)
                 if "Robot" in str(row[3]):
                     group_robot.append(name)
-    print("Passenger组总计：" + str(len(group_passenger)))
-    print("Security组总计：" + str(len(group_security)))
-    print("Robot组总计：" + str(len(group_robot)))
+    print("Passenger group total / Passenger组总计：" + str(len(group_passenger)))
+    print("Security group total / Security组总计：" + str(len(group_security)))
+    print("Robot group total / Robot组总计：" + str(len(group_robot)))
 
 def get_polar_data_path():
     target_file_name = get_grand_grand_parent_folder() + os.sep + "GroupData_Gaze_On_All"
@@ -122,7 +122,7 @@ def plot_scatter(data, title, ax, vmin, vmax):
     center, boundary_points, sorted_intensity, total_intensity = calculate_heatmap_center_and_percentage_boundary(data, top_percentage=0.1)
 
     concentration_index = calculate_concentration_index(sorted_intensity, total_intensity, top_percentage=0.1)
-    print(f"{title} - 热力质心: ({center[0]:.2f}, {center[1]:.2f}), 前10%集中度指数: {concentration_index:.4f}")
+    print(f"{title} - heatmap centroid / 热力质心: ({center[0]:.2f}, {center[1]:.2f}), top 10% concentration index / 前10%集中度指数: {concentration_index:.4f}")
 
     ax.scatter(center[0], center[1], color='red', label='Heatmap Center')
     ax.text(

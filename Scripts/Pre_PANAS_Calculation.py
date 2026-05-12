@@ -28,10 +28,10 @@ def find_file():
     global_file_path = global_file_path + "问卷数据" + os.sep + "积极消极情绪问卷_实验前" + os.sep
     global_file_path = global_file_path + "问卷.xlsx"
     if os.path.exists(global_file_path):
-        print(">>已找到目标文件")
+        print(">> Target file found / 已找到目标文件")
         print(global_file_path)
     else:
-        print(">>未找到目标文件")
+        print(">> Target file NOT found / 未找到目标文件")
 
 def read():
     global global_subject_feishu_names
@@ -52,17 +52,20 @@ def read():
 
     workbook.close()
 
-    print(">>飞书用户名称总计：" + str(len(global_subject_feishu_names)))
-    print(">>昵称总计：" + str(len(global_subject_nick_names)))
-    print(">>量表数据总计：" + str(len(global_subject_scale_data)))
-    print("\n" + "飞书用户名")
+    print(">> Feishu users total / 飞书用户名称总计：" + str(len(global_subject_feishu_names)))
+    print(">> Nickname total / 昵称总计：" + str(len(global_subject_nick_names)))
+    print(">> Scale data total / 量表数据总计：" + str(len(global_subject_scale_data)))
+    print("
+" + "Feishu user name / 飞书用户名")
     print(global_subject_feishu_names)
-    print("\n" + "昵称")
+    print("
+" + "Nickname / 昵称")
     print(global_subject_nick_names)
-    print("\n" + "量表数据")
+    print("
+" + "Scale data / 量表数据")
     print(global_subject_scale_data)
 
-    print(">>完成读取量表数据")
+    print(">> Scale data reading complete / 完成读取量表数据")
 
 def calculate():
     global global_pa_values
@@ -74,9 +77,9 @@ def calculate():
         sum_pa = (int(pa_datas[0]) + int(pa_datas[3]) + int(pa_datas[5]) + int(pa_datas[6]) + int(pa_datas[10]) + int(pa_datas[11])
                   + int(pa_datas[13]) + int(pa_datas[14]) + int(pa_datas[17]))
         global_pa_values.append(sum_pa / 9)
-        print(">>pa值：" + str(sum_pa / 9))
+        print(">> PA value / >>pa值：" + str(sum_pa / 9))
         index_pa = index_pa + 1
-    print(">>pa值总计：" + str(len(global_pa_values)))
+    print(">> PA total count / >>pa值总计：" + str(len(global_pa_values)))
 
     index_na = 0
     while index_na < len(global_subject_scale_data):
@@ -84,9 +87,9 @@ def calculate():
         sum_na = (int(na_datas[1]) + int(na_datas[2]) + int(na_datas[4]) + int(na_datas[7]) + int(na_datas[8]) + int(na_datas[9])
                   + int(na_datas[12]) + int(na_datas[15]) + int(na_datas[16]))
         global_na_values.append(sum_na / 9)
-        print(">>na值：" + str(sum_na / 9))
+        print(">> NA value / >>na值：" + str(sum_na / 9))
         index_na = index_na + 1
-    print(">>na值总计：" + str(len(global_na_values)))
+    print(">> NA total count / >>na值总计：" + str(len(global_na_values)))
 
 def output():
     global global_output_path
@@ -102,7 +105,7 @@ def output():
     timestamp = now.strftime("%Y-%m%d-%H-%M")
     global_output_path = global_output_path + "Results" + os.sep + "Pre-PANAS-Results-" + timestamp + ".xlsx"
     check_existing(global_output_path)
-    print("目标输出路径已确认：" + global_output_path)
+    print("Output path confirmed / 目标输出路径已确认：" + global_output_path)
 
     wb = Workbook()
     ws = wb.active
@@ -129,9 +132,9 @@ def output():
 def check_existing(path):
     if os.path.exists(path):
         os.remove(path)
-        print(">>重名文件存在 已移除")
+        print(">> Duplicate file found and removed / >>重名文件存在 已移除")
     else:
-        print(">>未发现重名文件")
+        print(">> No duplicate files found / >>未发现重名文件")
 
 if __name__ == "__main__":
     find_file()

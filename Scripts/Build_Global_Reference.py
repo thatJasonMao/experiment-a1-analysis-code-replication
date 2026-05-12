@@ -31,10 +31,10 @@ def find_file():
     global_file_path = global_file_path + "问卷数据" + os.sep + "基本情况问卷" + os.sep
     global_file_path = global_file_path + "问卷.xlsx"
     if os.path.exists(global_file_path):
-        print(">>已找到目标文件")
+        print(">> Target file found / 已找到目标文件")
         print(global_file_path)
     else:
-        print(">>未找到目标文件")
+        print(">> Target file NOT found / 未找到目标文件")
 
 def read():
     global global_subject_feishu_names
@@ -65,21 +65,26 @@ def read():
 
     workbook.close()
 
-    print(">>飞书用户名称总计：" + str(len(global_subject_feishu_names)))
-    print(">>昵称总计：" + str(len(global_subject_nick_names)))
-    print(">>量表数据总计：" + str(len(global_subject_scale_data)))
-    print("\n" + "飞书用户名")
+    print(">> Feishu users total / 飞书用户名称总计：" + str(len(global_subject_feishu_names)))
+    print(">> Nickname total / 昵称总计：" + str(len(global_subject_nick_names)))
+    print(">> Scale data total / 量表数据总计：" + str(len(global_subject_scale_data)))
+    print("
+" + "Feishu user name / 飞书用户名")
     print(global_subject_feishu_names)
-    print("\n" + "昵称")
+    print("
+" + "Nickname / 昵称")
     print(global_subject_nick_names)
-    print("\n" + "真实姓名")
+    print("
+" + "Real name / 真实姓名")
     print(global_subject_real_names)
-    print("\n" + "性别")
+    print("
+" + "Gender / 性别")
     print(global_subject_genders)
-    print("\n" + "量表数据")
+    print("
+" + "Scale data / 量表数据")
     print(global_subject_scale_data)
 
-    print(">>完成读取量表数据")
+    print(">> Scale data reading complete / 完成读取量表数据")
 
     global global_record_names
 
@@ -96,7 +101,7 @@ def read():
     traverse_folder(target_path_2)
     traverse_folder(target_path_3)
 
-    print(">>完成映射文件路径，索引总计：" + str(len(global_record_names.keys())))
+    print(">> File path mapping complete, index total / 完成映射文件路径，索引总计：" + str(len(global_record_names.keys())))
     # print(global_record_names)
 
 def traverse_folder(str_path):
@@ -117,7 +122,7 @@ def output_info():
     output_path = global_current_script_path.replace("Scripts\Build_Global_Reference.py", "")
     output_path = output_path + "Subject_Data_Global_Reference" + ".xlsx"
     clear_path(output_path)
-    print("目标输出路径已确认：" + output_path)
+    print("Output path confirmed / 目标输出路径已确认：" + output_path)
 
     subject_ages = []
     index = 0
@@ -128,7 +133,7 @@ def output_info():
         subject_ages.append(age)
         index = index + 1
 
-    print(">>年龄总计：" + str(len(subject_ages)))
+    print(">> Age total / 年龄总计：" + str(len(subject_ages)))
 
     wb = Workbook()
     ws = wb.active
@@ -148,7 +153,7 @@ def output_info():
             folder_path_correction.append(global_record_names[current_name])
         else:
             folder_path_correction.append("Null")
-            print(">>映射出错 受试者在数据表中存在，数据索引为空！ ID：" + current_name)
+            print(">> Mapping error: subject exists in table but index is null / 映射出错 受试者在数据表中存在，数据索引为空！ ID：" + current_name)
         index_existing_table = index_existing_table + 1
 
     ws['F1'] = '数据路径'

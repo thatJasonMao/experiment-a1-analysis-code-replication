@@ -20,8 +20,8 @@ plt.figure(figsize=(2000 / 300, 2000 / 300))
 avg = np.mean(pqs)
 variance = np.var(pqs)
 
-print(f"均值是: {avg}")
-print(f"方差是: {variance}")
+print(f"Mean / 均值是: {avg}")
+print(f"Variance / 方差是: {variance}")
 
 ax = sns.violinplot(y=pqs, width=0.55)
 for violin in ax.collections:

@@ -61,9 +61,9 @@ def build_group_ref():
                     group_security.append(name)
                 if "Robot" in str(row[3]):
                     group_robot.append(name)
-    print("Passenger组总计：" + str(len(group_passenger)))
-    print("Security组总计：" + str(len(group_security)))
-    print("Robot组总计：" + str(len(group_robot)))
+    print("Passenger group total / Passenger组总计：" + str(len(group_passenger)))
+    print("Security group total / Security组总计：" + str(len(group_security)))
+    print("Robot group total / Robot组总计：" + str(len(group_robot)))
 
 def get_raw_data_path():
     target_file_name = get_grand_grand_parent_folder() + os.sep + "GroupData_Gaze_On_NPC_Full_Info"
@@ -109,9 +109,9 @@ def get_data(path):
                         if -12 < sub_pos_y < -11.6 and sub_pos_x > 10.5:
                             raw_infos.append(frame_data)
                     else:
-                        print(f"略过一处不合规数据 {path}")
+                        print(f"Skipping one invalid data entry / 略过一处不合规数据 {path}")
     except:
-        print("文件读取错误：" + path)
+        print("File read error / 文件读取错误：" + path)
     return raw_infos
 
 def build_data_ref():
@@ -164,7 +164,7 @@ def build_data_ref():
         local_pos_total.append(new_pos)
 
 def execute_dbscan(data_container, name):
-    print(f"{name}数据容器长度：{len(data_container)}")
+    print(f"{name} data container length / {name}数据容器长度：{len(data_container)}")
     points = np.array(data_container)
 
     db = DBSCAN(eps=epsilon, min_samples=min_samples).fit(points)
@@ -172,7 +172,7 @@ def execute_dbscan(data_container, name):
 
     n_clusters = len(set(labels)) - (1 if -1 in labels else 0)
     noise_percent = np.sum(labels == -1) / len(labels) * 100
-    print(f"{name}聚类完成：找到{n_clusters}个簇，噪声点占比{noise_percent:.1f}%")
+    print(f"{name} clustering complete: {n_clusters} clusters found, noise {noise_percent:.1f}% / {name}聚类完成：找到{n_clusters}个簇，噪声点占比{noise_percent:.1f}%")
 
     plt.figure(figsize=(12, 12))
     plt.rcParams['font.sans-serif'] = ['Arial']

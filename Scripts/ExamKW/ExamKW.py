@@ -37,6 +37,6 @@ if len(csv_files) == 2:
 
     alpha = 0.05
     if p_value < alpha:
-        print("拒绝原假设，两组数据分布存在显著差异。")
+        print("Reject null hypothesis, significant difference between groups / 拒绝原假设，两组数据分布存在显著差异。")
     else:
-        print("不能拒绝原假设，两组数据分布无显著差异。")
+        print("Cannot reject null hypothesis, no significant difference / 不能拒绝原假设，两组数据分布无显著差异。")

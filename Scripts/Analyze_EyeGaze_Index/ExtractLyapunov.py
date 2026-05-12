@@ -48,9 +48,9 @@ def build_group_ref():
                     group_security.append(name)
                 if "Robot" in str(row[3]):
                     group_robot.append(name)
-    print("Passenger组总计：" + str(len(group_passenger)))
-    print("Security组总计：" + str(len(group_security)))
-    print("Robot组总计：" + str(len(group_robot)))
+    print("Passenger group total / Passenger组总计：" + str(len(group_passenger)))
+    print("Security group total / Security组总计：" + str(len(group_security)))
+    print("Robot group total / Robot组总计：" + str(len(group_robot)))
 
 def execute():
     for _, row in a1_data.iterrows():
@@ -58,7 +58,7 @@ def execute():
         subject_name = level_value.split('_')[0]
         subject_mle_dict[subject_name] = row['Lyapunov值']
 
-    print("受试者MLE值字典:")
+    print("Subject MLE value dict: / 受试者MLE值字典:")
     for subject, mle_value in subject_mle_dict.items():
         print(f"{subject}: {mle_value}")
 

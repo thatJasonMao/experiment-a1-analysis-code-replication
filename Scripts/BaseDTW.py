@@ -29,7 +29,7 @@ def read_and_calculate():
     for file in target_files:
         get_dtw(file)
         progress_bar.update(1)
-        progress_bar.set_description(f"计算受试者与领导者的轨迹相似性")
+        progress_bar.set_description(f"Computing subject-leader trajectory similarity / 计算受试者与领导者的轨迹相似性")
 
 def get_dtw(path):
     global dtw_infos

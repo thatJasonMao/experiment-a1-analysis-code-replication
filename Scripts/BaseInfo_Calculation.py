@@ -29,10 +29,10 @@ def find_file():
     global_file_path = global_file_path + "问卷数据" + os.sep + "基本情况问卷" + os.sep
     global_file_path = global_file_path + "问卷.xlsx"
     if os.path.exists(global_file_path):
-        print(">>已找到目标文件")
+        print(">> Target file found / 已找到目标文件")
         print(global_file_path)
     else:
-        print(">>未找到目标文件")
+        print(">> Target file NOT found / 未找到目标文件")
 
 def read():
     global global_subject_feishu_names
@@ -63,28 +63,33 @@ def read():
 
     workbook.close()
 
-    print(">>飞书用户名称总计：" + str(len(global_subject_feishu_names)))
-    print(">>昵称总计：" + str(len(global_subject_nick_names)))
-    print(">>量表数据总计：" + str(len(global_subject_scale_data)))
-    print("\n" + "飞书用户名")
+    print(">> Feishu users total / 飞书用户名称总计：" + str(len(global_subject_feishu_names)))
+    print(">> Nickname total / 昵称总计：" + str(len(global_subject_nick_names)))
+    print(">> Scale data total / 量表数据总计：" + str(len(global_subject_scale_data)))
+    print("
+" + "Feishu user name / 飞书用户名")
     print(global_subject_feishu_names)
-    print("\n" + "昵称")
+    print("
+" + "Nickname / 昵称")
     print(global_subject_nick_names)
-    print("\n" + "真实姓名")
+    print("
+" + "Real name / 真实姓名")
     print(global_subject_real_names)
-    print("\n" + "性别")
+    print("
+" + "Gender / 性别")
     print(global_subject_genders)
-    print("\n" + "量表数据")
+    print("
+" + "Scale data / 量表数据")
     print(global_subject_scale_data)
 
-    print(">>完成读取量表数据")
+    print(">> Scale data reading complete / 完成读取量表数据")
 
 def output_age():
     output_path = global_current_script_path.replace("Scripts\BaseInfo_Calculation.py", "")
     now = datetime.datetime.now()
     timestamp = now.strftime("%Y-%m%d-%H-%M")
     output_path = output_path + "Results" + os.sep + "BaseInfo" + os.sep + "Age-" + timestamp + ".xlsx"
-    print("目标输出路径已确认：" + output_path)
+    print("Output path confirmed / 目标输出路径已确认：" + output_path)
 
     subject_ages = []
     index = 0
@@ -95,7 +100,7 @@ def output_age():
         subject_ages.append(age)
         index = index + 1
 
-    print(">>年龄总计：" + str(len(subject_ages)))
+    print(">> Age total / 年龄总计：" + str(len(subject_ages)))
 
     wb = Workbook()
     ws = wb.active
@@ -112,7 +117,7 @@ def output_location():
     now = datetime.datetime.now()
     timestamp = now.strftime("%Y-%m%d-%H-%M")
     output_path = output_path + "Results" + os.sep + "BaseInfo" + os.sep + "Location-" + timestamp + ".xlsx"
-    print("目标输出路径已确认：" + output_path)
+    print("Output path confirmed / 目标输出路径已确认：" + output_path)
 
     subject_pos = []
     index = 0
@@ -122,7 +127,7 @@ def output_location():
         subject_pos.append(pos)
         index = index + 1
 
-    print(">>位置总计：" + str(len(subject_pos)))
+    print(">> Position total / >>位置总计：" + str(len(subject_pos)))
 
     wb = Workbook()
     ws = wb.active
@@ -139,7 +144,7 @@ def output_experience():
     now = datetime.datetime.now()
     timestamp = now.strftime("%Y-%m%d-%H-%M")
     output_path = output_path + "Results" + os.sep + "BaseInfo" + os.sep + "Experience-" + timestamp + ".xlsx"
-    print("目标输出路径已确认：" + output_path)
+    print("Output path confirmed / 目标输出路径已确认：" + output_path)
 
     subject_3d_experience = []
     subject_vr_experience = []
@@ -177,7 +182,7 @@ def output_preference():
     now = datetime.datetime.now()
     timestamp = now.strftime("%Y-%m%d-%H-%M")
     output_path = output_path + "Results" + os.sep + "BaseInfo" + os.sep + "Preference-" + timestamp + ".xlsx"
-    print("目标输出路径已确认：" + output_path)
+    print("Output path confirmed / 目标输出路径已确认：" + output_path)
 
     subject_space_sense = []
     subject_follow_trend = []
@@ -254,12 +259,12 @@ def clear_path(folder_path):
             file_path = os.path.join(folder_path, filename)
             if os.path.isfile(file_path):
                 os.remove(file_path)
-                print(f"已删除文件: {file_path}")
-        print(f"文件夹 {folder_path} 中的所有文件已清除。")
+                print(f"File deleted / 已删除文件: {file_path}")
+        print(f"All files in folder cleared / 文件夹 {folder_path} 中的所有文件已清除。")
     except FileNotFoundError:
-        print(f"指定的文件夹 {folder_path} 不存在。")
+        print(f"Specified folder does not exist / 指定的文件夹 {folder_path} 不存在。")
     except PermissionError:
-        print(f"没有权限删除文件夹 {folder_path} 中的文件。")
+        print(f"No permission to delete files in folder / 没有权限删除文件夹 {folder_path} 中的文件。")
 
 def get_experience_value(str_value):
     if str_value == "我没有玩过3D游戏":

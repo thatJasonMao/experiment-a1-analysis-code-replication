@@ -47,9 +47,9 @@ def build_group_ref():
                     group_security.append(name)
                 if "Robot" in str(row[3]):
                     group_robot.append(name)
-    print("Passenger组总计：" + str(len(group_passenger)))
-    print("Security组总计：" + str(len(group_security)))
-    print("Robot组总计：" + str(len(group_robot)))
+    print("Passenger group total / Passenger组总计：" + str(len(group_passenger)))
+    print("Security group total / Security组总计：" + str(len(group_security)))
+    print("Robot group total / Robot组总计：" + str(len(group_robot)))
 
 def get_local_gaze_path():
     target_file_name = get_grand_grand_parent_folder() + os.sep + "GroupData_Gaze_On_NPC_Full_Info"
@@ -123,9 +123,9 @@ def get_capsule_data():
             gaze_npc_local_pos_robot = gaze_npc_local_pos_robot + get_data(file)
             gaze_npc_local_pos_total = gaze_npc_local_pos_total + get_data(file)
 
-    print(f"Passenger组注视数量总计{len(gaze_npc_local_pos_passenger)}")
-    print(f"Security组注视数量总计{len(gaze_npc_local_pos_security)}")
-    print(f"Robot组注视数量总计{len(gaze_npc_local_pos_robot)}")
+    print(f"Passenger group gaze count / Passenger组注视数量总计{len(gaze_npc_local_pos_passenger)}")
+    print(f"Security group gaze count / Security组注视数量总计{len(gaze_npc_local_pos_security)}")
+    print(f"Robot group gaze count / Robot组注视数量总计{len(gaze_npc_local_pos_robot)}")
 
 def draw_cloud():
     global gaze_npc_local_pos_security

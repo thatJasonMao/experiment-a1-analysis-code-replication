@@ -60,9 +60,9 @@ def build_group_ref():
                     group_security.append(name)
                 if "Robot" in str(row[3]):
                     group_robot.append(name)
-    print("Passenger组总计：" + str(len(group_passenger)))
-    print("Security组总计：" + str(len(group_security)))
-    print("Robot组总计：" + str(len(group_robot)))
+    print("Passenger group total / Passenger组总计：" + str(len(group_passenger)))
+    print("Security group total / Security组总计：" + str(len(group_security)))
+    print("Robot group total / Robot组总计：" + str(len(group_robot)))
 
 def get_raw_data_path():
     target_file_name = get_grand_grand_parent_folder() + os.sep + "GroupData_Gaze_On_All"
@@ -154,7 +154,7 @@ def build_data_ref():
         local_pos_total.append(new_pos)
 
 def execute_dbscan(data_container, name):
-    print(f"{name}数据容器长度：{len(data_container)}")
+    print(f"{name} data container length / {name}数据容器长度：{len(data_container)}")
     points = np.array(data_container)
 
     db = DBSCAN(eps=epsilon, min_samples=min_samples).fit(points)
@@ -162,7 +162,7 @@ def execute_dbscan(data_container, name):
 
     n_clusters = len(set(labels)) - (1 if -1 in labels else 0)
     noise_percent = np.sum(labels == -1) / len(labels) * 100
-    print(f"{name}聚类完成：找到{n_clusters}个簇，噪声点占比{noise_percent:.1f}%")
+    print(f"{name} clustering complete: {n_clusters} clusters found, noise {noise_percent:.1f}% / {name}聚类完成：找到{n_clusters}个簇，噪声点占比{noise_percent:.1f}%")
 
     plt.figure(figsize=(12, 12))
     plt.rcParams['font.sans-serif'] = ['Arial']
@@ -199,7 +199,7 @@ def execute_dbscan(data_container, name):
     output_path = f"{sub_folder_path}/{name}_DBSCAN.png"
     plt.savefig(output_path, bbox_inches='tight', dpi=600)
     plt.close()
-    print("聚类结果散点图输出完成")
+    print("Clustering scatter plot output complete / 聚类结果散点图输出完成")
 
     unique_labels = set(labels)
     n_clusters = len(unique_labels) - (1 if -1 in labels else 0)
@@ -250,7 +250,7 @@ def execute_dbscan(data_container, name):
         kde_path = f"{sub_folder_path}/{name}_KDE.png"
         plt.savefig(kde_path, dpi=600, bbox_inches='tight', bbox_extra_artists=[ztext])
         plt.close()
-        print("三维KDE图输出完成")
+        print("3D KDE plot output complete / 三维KDE图输出完成")
 
     output_content = []
     output_content.append(f"=== {name} Group Cluster Report ===")
@@ -280,7 +280,7 @@ def execute_dbscan(data_container, name):
     file_name = f"{name}_cluster_info_eps{epsilon}_minsamp{min_samples}.txt"
     with open(os.path.join(sub_folder_path, file_name), 'w') as f:
         f.write('\n'.join(output_content))
-    print("文本数据输出完成")
+    print("Text data output complete / 文本数据输出完成")
 
 if __name__ == "__main__":
     if not os.path.exists(sub_folder_path):

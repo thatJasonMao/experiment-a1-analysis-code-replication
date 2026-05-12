@@ -18,8 +18,8 @@ def print_vio(data_container, name):
     avg = np.mean(data_container)
     variance = np.var(data_container)
 
-    print(f"{name}的均值是: {avg}")
-    print(f"{name}的方差是: {variance}")
+    print(f"Mean of {name} / {name}的均值是: {avg}")
+    print(f"Variance of {name} / {name}的方差是: {variance}")
 
     ax = sns.violinplot(y=data_container, width=0.55)
     for violin in ax.collections:
