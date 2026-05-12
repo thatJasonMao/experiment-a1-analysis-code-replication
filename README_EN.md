@@ -84,7 +84,17 @@ Execute scripts in the following order:
 
 ## 4. Development Milestones
 
-[Git commit history is required to generate milestones]
+| Stage | Milestone | Key Deliverables |
+|-------|-----------|-----------------|
+| **M1** | Data Aggregation & Global Index | Multi-source data time-aligned into GroupData files; `Subject_Data_Global_Reference.xlsx` global participant index built |
+| **M2** | Questionnaire Scoring & Preprocessing | Standardized scoring for GSE / ITS / SSQ / PANAS; time-window splitting by decision points (DP1/DP2/DP3) |
+| **M3** | Kinematic & Eye-Tracking Metrics | Speed, acceleration, travel distance, evacuation time, gaze target classification, Lyapunov exponents, gaze path distance/velocity, follow ratios |
+| **M4** | Statistical Testing | Normality tests (Shapiro-Wilk, K-S); parametric/non-parametric between-group comparisons (t-test, Mann-Whitney, ANOVA, Kruskal-Wallis, Friedman) |
+| **M5** | Bayesian Hierarchical Logistic Regression | PyMC modeling (V1→V8) with fixed/random effects, ROC/PR calibration curves; independent modeling per decision point |
+| **M6** | Mixed-Effects Logit Models | pymer4 / R-lme4 GLMM (V1→V5) for frequentist cross-validation; independent modeling per decision point |
+| **M7** | Eye-Gaze Pattern Clustering | DBSCAN 2D/3D clustering × 4 scenes × 4 gaze targets; KDE heatmaps, topology maps, polar visualization |
+| **M8** | Between/Within-Group Comparisons | Box/violin plots, Spearman correlation heatmaps, DTW trajectory similarity, follow-ratio comparison across decision points |
+| **M9** | Final Figures & Publication Graphics | Questionnaire distributions, polar gaze heatmaps, trajectory plots, pie charts, posterior forest plots — all ≥300 DPI publication-ready output |
 
 ---
 

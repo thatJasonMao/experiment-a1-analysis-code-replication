@@ -23,6 +23,7 @@ For full documentation, please select your language:
 | Overview | [README_EN.md#1-overview](README_EN.md#1-overview) | [README_CN.md#一总体介绍](README_CN.md#一总体介绍) |
 | Quick Start | [README_EN.md#2-quick-start](README_EN.md#2-quick-start) | [README_CN.md#二快速开始](README_CN.md#二快速开始) |
 | Dependencies | [README_EN.md#3-core-dependencies](README_EN.md#3-core-dependencies) | [README_CN.md#三主要依赖包](README_CN.md#三主要依赖包) |
+| Milestones | [README_EN.md#4-development-milestones](README_EN.md#4-development-milestones) | [README_CN.md#四开发里程碑](README_CN.md#四开发里程碑) |
 | Module Details | [README_EN.md#5-module--script-details](README_EN.md#5-module--script-details) | [README_CN.md#五模块与脚本详细说明](README_CN.md#五模块与脚本详细说明) |
 
 ## License
