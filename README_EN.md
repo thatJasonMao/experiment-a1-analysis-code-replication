@@ -4,7 +4,7 @@
 
 This repository contains the data analysis codebase for a virtual reality evacuation experiment, centered on the core research question of how leader presence influences evacuation decision-making and behavior. It provides systematic extraction, cleaning, statistical modeling, and visualization of eye-tracking, movement trajectory, and questionnaire data collected from multiple participants across multiple levels and experimental groups.
 
-Experiments were conducted at two sites — Changchun and Shenzhen. Participants were assigned to one of three groups based on leader type: Passenger, Robot, and Security, covering 7 levels from A1 through B5.
+Experiments were conducted at three sites — Changchun, Shenzhen, and Chengdu. Participants were assigned to one of three groups based on leader type: Passenger, Robot, and Security, covering 7 levels from A1 through B5.
 
 **Data and Privacy Notice**:
 - This repository contains analysis code only. No experimental raw data or intermediate result data is included.
@@ -45,6 +45,7 @@ This repository does not contain experimental data. To reproduce the analysis pi
 
 - `受试者采集数据_长春/`: Changchun site participant data (one subdirectory per participant)
 - `受试者采集数据_深圳/`: Shenzhen site participant data (one subdirectory per participant)
+- `受试者采集数据_成都/`: Chengdu site participant data (one subdirectory per participant)
 - `问卷数据/`: Raw questionnaire Excel files
 
 ### 2.4 Analysis Pipeline
@@ -102,10 +103,10 @@ Execute scripts in the following order:
 
 #### Build_Global_Reference.py
 
-- **Purpose**: Scan participant data directories at both Changchun and Shenzhen sites, build a mapping from participant nicknames to data folder paths, and export it as a global index table.
+- **Purpose**: Scan participant data directories at Changchun, Shenzhen, and Chengdu sites, build a mapping from participant nicknames to data folder paths, and export it as a global index table.
 - **Core Logic**:
   - Read all participant Feishu nicknames and real names from the basic information questionnaire.
-  - Traverse the `受试者采集数据_长春` and `受试者采集数据_深圳` directory trees, fuzzy-match participant folders using nicknames.
+  - Traverse the `受试者采集数据_长春`, `受试者采集数据_深圳`, and `受试者采集数据_成都` directory trees, fuzzy-match participant folders using nicknames.
   - Output `Subject_Data_Global_Reference.xlsx` for unified reference by downstream scripts.
 - **Dependencies**: `openpyxl`
 
