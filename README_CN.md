@@ -9,6 +9,7 @@
 **数据与隐私说明**：
 - 本仓库仅包含数据分析代码，不包含任何实验原始数据或中间结果数据。
 - 所有涉及受试者隐私的数据（主要指受试者姓名）均已经过 MD5 哈希脱敏处理，仓库中不包含任何可识别的个人身份信息。
+- 实验源数据存放于独立仓库：[experiment-a1-source-data-replication](https://github.com/thatJasonMao/experiment-a1-source-data-replication)
 
 分析流程的核心模块包括：
 
@@ -41,7 +42,7 @@ pip install pymer4
 
 ### 2.3 数据准备
 
-本仓库不包含实验数据。如需复现分析流程，请将实验数据按以下目录结构放置：
+本仓库不包含实验数据。实验源数据存放于独立仓库 [experiment-a1-source-data-replication](https://github.com/thatJasonMao/experiment-a1-source-data-replication)。如需复现分析流程，请将实验数据按以下目录结构放置：
 
 - `受试者采集数据_长春/`：长春站受试者数据（每受试者一个子目录）
 - `受试者采集数据_深圳/`：深圳站受试者数据（每受试者一个子目录）

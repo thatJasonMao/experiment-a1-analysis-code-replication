@@ -6,6 +6,7 @@ This repository has been prepared for the purpose of paper submission and peer r
 
 1. **Code-Only Repository**: This repository contains only data analysis source code (Python scripts). No experimental raw data, processed data, intermediate results, or final result files are included.
 2. **Privacy Protection**: All privacy-sensitive data, specifically participant names, has been anonymized via MD5 hashing prior to any code being committed to this repository. No personally identifiable information is present in any file within this repository.
+3. **Data Repository**: The experimental source data required to reproduce the full analysis pipeline is hosted in a separate repository: [experiment-a1-source-data-replication](https://github.com/thatJasonMao/experiment-a1-source-data-replication)
 
 ## About This Project
 

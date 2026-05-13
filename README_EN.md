@@ -9,6 +9,7 @@ Experiments were conducted at three sites — Changchun, Shenzhen, and Chengdu. 
 **Data and Privacy Notice**:
 - This repository contains analysis code only. No experimental raw data or intermediate result data is included.
 - All privacy-sensitive data (specifically, participant names) has been anonymized via MD5 hashing. No personally identifiable information is present in this repository.
+- The experimental source data is hosted in a separate repository: [experiment-a1-source-data-replication](https://github.com/thatJasonMao/experiment-a1-source-data-replication)
 
 The analysis pipeline consists of the following core modules:
 
@@ -41,7 +42,7 @@ pip install pymer4
 
 ### 2.3 Data Preparation
 
-This repository does not contain experimental data. To reproduce the analysis pipeline, organize your data according to the following directory structure:
+This repository does not contain experimental data. The source data is available at [experiment-a1-source-data-replication](https://github.com/thatJasonMao/experiment-a1-source-data-replication). To reproduce the analysis pipeline, organize the data according to the following directory structure:
 
 - `受试者采集数据_长春/`: Changchun site participant data (one subdirectory per participant)
 - `受试者采集数据_深圳/`: Shenzhen site participant data (one subdirectory per participant)
